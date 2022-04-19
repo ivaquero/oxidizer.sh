@@ -57,7 +57,7 @@ case $SHELL in
     brew install zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting
     export shell_conf=$HOME/.zshrc
     ;;
-*bash)
+*)
     bash_v=$(bash --version | head -n1 | cut -d' ' -f4 | cut -d'.' -f1)
     if [[ bash_v < 5 ]]; then
         printf "📦 Installing Latest Bash...\n"
