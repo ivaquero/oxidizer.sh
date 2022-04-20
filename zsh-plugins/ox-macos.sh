@@ -15,6 +15,8 @@ fi
 # main
 ##########################################################
 
+export CACHES=$HOME/Library/Caches
+
 update() {
     echo "Installing needed updates.\n"
     softwareupdate -i -a >/dev/null 2>&1
@@ -28,7 +30,7 @@ clean() {
         rm -rfv $(brew --cache)/"*\d+*"
         ;;
     cr)
-        rm -rfv $HOME/Library/Caches/Google/Chrome/*
+        rm -rfv $CACHES/Google/Chrome/*
         ;;
     zs)
         rm $HOME/.zsh_sessions/*.history*

@@ -93,7 +93,7 @@ Copy-Item -Verbose -Force -Path "$env:OXIDIZER/demo-custom.ps1" -Destination "$e
 sd '.* STARTUP=.*' '$global:STARTUP=1' "$env:OXIDIZER/custom.ps1"
 
 # set path of oxidizer
-sd '= .*\oxidizer.ps1' '= $env:OXIDIZER\oxidizer.ps1' $PROFILE
+sd '= .*\oxidizer.ps1' "= $env:OXIDIZER\oxidizer.ps1" $PROFILE
 
 ###################################################
 # Update PowerShell Modules
