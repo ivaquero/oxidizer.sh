@@ -33,7 +33,7 @@ $env:EDITOR_T = "vi"
 # other-shortcuts
 # oxpfm: ox-formats
 # oxpwt: ox-widgets
-$global:PLUGINS = @("oxpg", "oxpc", "oxpvs", "oxpfm")
+$global:PLUGINS = @("oxpc", "oxpvs", "oxpfm")
 
 ##########################################################
 # register proxy ports

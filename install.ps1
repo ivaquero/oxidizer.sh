@@ -76,24 +76,24 @@ echo "
 #Oxidizer" >> $PROFILE
 
 if ( [Environment]::OSVersion.VersionString.Contains("Unix") ) { 
-    echo "$env:BASE = $env:HOME" >> $PROFILE
+    echo '$env:BASE = $env:HOME' >> $PROFILE
 }
-else { echo "$env:BASE = $env:USERPROFILE" >> $PROFILE }
+else { echo '$env:BASE = $env:USERPROFILE' >> $PROFILE }
 
-echo "
+echo '
 if ( [string]::IsNullOrEmpty($env:OXIDIZER) ) { 
-    $env:OXIDIZER = "$env:BASE/oxidizer" 
+    $env:OXIDIZER = "$env:BASE\oxidizer"
 }
-. $env:OXIDIZER/oxidizer.ps1" >> $PROFILE
+. $env:OXIDIZER\oxidizer.ps1' >> $PROFILE
 
 echo "⚙️ Adding Custom settings..."
 Copy-Item -Verbose -Force -Path "$env:OXIDIZER/demo-custom.ps1" -Destination "$env:OXIDIZER/custom.ps1"
 
 # loading starship & zoxide
-sd ".* STARTUP=.*" "$global:STARTUP=1" "$env:OXIDIZER/custom.ps1"
+sd ''.* STARTUP=.*'' '$global:STARTUP=1' '$env:OXIDIZER/custom.ps1'
 
 # set path of oxidizer
-sd "= .*/oxidizer.ps1" "= $env:OXIDIZER/oxidizer.ps1" $PROFILE
+sd '= .*/oxidizer.ps1' '= $env:OXIDIZER\oxidizer.ps1' $PROFILE
 
 ###################################################
 # Update PowerShell Modules
