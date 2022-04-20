@@ -109,9 +109,10 @@ gjk() {
     git rev-list --objects --all | grep -f <(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | cut -f 1 -d " " | tail -$number)
 }
 
-grm() {
+# remove remote tag
+gtg() {
     case $1 in
-    -rt)
+    rmo)
         git push --delete origin $2
         ;;
     esac

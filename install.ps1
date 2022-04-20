@@ -56,11 +56,11 @@ else {
 # Update Terminal Settings
 ###################################################
 
-if ( !(Test-Path "$env:SCOOP/persist/alacritty" ) ) {
-    New-Item -ItemType Directory -Force -Path "$env:SCOOP/persist/alacritty"
+if ( !(Test-Path "$env:SCOOP\persist\alacritty" ) ) {
+    New-Item -ItemType Directory -Force -Path "$env:SCOOP\persist\alacritty"
 }
 
-Copy-Item -Verbose -Path "$env:OXIDIZER/defaults/alacritty-win.yml" -Destination "$env:SCOOP/persist/alacritty/alacritty.yml"
+Copy-Item -Verbose -Path "$env:OXIDIZER\defaults\alacritty-win.yml" -Destination "$env:SCOOP\persist\alacritty\alacritty.yml"
 
 ###################################################
 # Update PowerShell Settings
@@ -87,10 +87,10 @@ if ( [string]::IsNullOrEmpty($env:OXIDIZER) ) {
 . $env:OXIDIZER\oxidizer.ps1' >> $PROFILE
 
 echo "⚙️ Adding Custom settings..."
-Copy-Item -Verbose -Force -Path "$env:OXIDIZER/demo-custom.ps1" -Destination "$env:OXIDIZER/custom.ps1"
+Copy-Item -Verbose -Force -Path "$env:OXIDIZER\demo-custom.ps1" -Destination "$env:OXIDIZER\custom.ps1"
 
 # loading starship & zoxide
-sd '.* STARTUP=.*' '$global:STARTUP=1' "$env:OXIDIZER/custom.ps1"
+sd '.* STARTUP=.*' '$global:STARTUP=1' "$env:OXIDIZER\custom.ps1"
 
 # set path of oxidizer
 sd '= .*\oxidizer.ps1' "= $env:OXIDIZER\oxidizer.ps1" $PROFILE

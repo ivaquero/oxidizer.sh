@@ -98,9 +98,9 @@ function gjk {
     git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | Where-Object { $_ -like "blob*" } | Sort-Object { [int]($_ -split "\s+")[2] } | Select-Object -Last $number
 }
 
-function grm() {
+function gtg() {
     Switch ( $args[1] ) {
-        rt { git push --delete origin $args[2] }
+        rmo { git push --delete origin $args[2] }
     }
 }
 
