@@ -21,7 +21,7 @@ function init_scoop {
         echo "Installing $line"
         pueue add -g init_scoop "scoop install $line"
     }
-    Start-Sleep -s 3 
+    Start-Sleep -s 3
     pueue status
 }
 
@@ -37,7 +37,7 @@ function up_scoop {
         echo "Installing $line"
         pueue add -g up_scoop "scoop install $line"
     }
-    Start-Sleep -s 3 
+    Start-Sleep -s 3
     pueue status
 }
 
@@ -58,12 +58,12 @@ function sba { scoop buck add $args }
 
 function sbrm { scoop buck rm $args }
 
-del alias:sls -Force
+del alias:sls -Force -ErrorAction SilentlyContinue
 function sls { scoop list }
 
 function sups { scoop update }
 
-function sup { 
+function sup {
     if ([string]::IsNullOrEmpty($args)) { scoop update * }
     else { scoop update $args }
 }
@@ -73,12 +73,12 @@ function sisp {
     if ( $num -ge 1 ) {
         pueue group add scoop_install
         pueue parallel $num -g scoop_install
-        
+
         ForEach ($pkg in $args) {
             echo "Installing $pkg"
             pueue add -g scoop_install "scoop install $pkg"
         }
-        Start-Sleep -s 3 
+        Start-Sleep -s 3
         pueue status
     }
     else { scoop update * }
@@ -89,18 +89,18 @@ function supp {
     if ( $num -ge 1 ) {
         pueue group add scoop_update
         pueue parallel $num -g scoop_update
-        
+
         ForEach ($pkg in $args) {
             echo "Installing $pkg"
             pueue add -g scoop_update "scoop update $pkg"
         }
-        Start-Sleep -s 3 
+        Start-Sleep -s 3
         pueue status
     }
     else { scoop update * }
 }
 function scl {
-    if ([string]::IsNullOrEmpty($args)) { scoop cleanup * } 
+    if ([string]::IsNullOrEmpty($args)) { scoop cleanup * }
     else { scoop cleanup $args }
 }
 function sst { scoop status }

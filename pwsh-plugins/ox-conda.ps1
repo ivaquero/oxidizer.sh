@@ -18,7 +18,7 @@ function init_conda {
 
 function up_conda {
     param ( $the_env )
-    if ([string]::IsNullOrEmpty($the_env)) { 
+    if ([string]::IsNullOrEmpty($the_env)) {
         $cenv = "base"
     }
     elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) { $cenv = $global:Conda_Env.$the_env }
@@ -32,8 +32,8 @@ function up_conda {
 
 function back_conda {
     param ( $the_env )
-    if ([string]::IsNullOrEmpty($the_env)) { 
-        $cenv = "base" 
+    if ([string]::IsNullOrEmpty($the_env)) {
+        $cenv = "base"
     }
     elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) { $cenv = $global:Conda_Env.$the_env }
     else { $cenv = $the_env }
@@ -58,7 +58,7 @@ function cdpt { conda-tree depends -t --small $args }
 function crdp { conda-tree whoneeds $pkgs }
 
 # clean packages
-function ccl { 
+function ccl {
     if ([string]::IsNullOrEmpty($args)) { conda clean --all }
     else { conda clean $args }
 }
@@ -74,21 +74,21 @@ function cup {
     }
 }
 
-del alias:cls -Force
-del alias:clv -Force
+del alias:cls -Force -ErrorAction SilentlyContinue
+del alias:clv -Force -ErrorAction SilentlyContinue
 # list packages
 # $1=name
 function cls {
-    param ( $the_env ) 
+    param ( $the_env )
 
-    if ([string]::IsNullOrEmpty($the_env)) { 
-        mamba list 
+    if ([string]::IsNullOrEmpty($the_env)) {
+        mamba list
     }
     elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) {
-        mamba list -n $global:Conda_Env.$the_env 
+        mamba list -n $global:Conda_Env.$the_env
     }
-    else { 
-        mamba list -n $the_env 
+    else {
+        mamba list -n $the_env
     }
 }
 
@@ -96,7 +96,7 @@ function cls {
 # $1=name
 function clv {
     param ( $the_env )
-    if ([string]::IsNullOrEmpty($the_env)) { 
+    if ([string]::IsNullOrEmpty($the_env)) {
         conda-tree leaves
     }
     elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) {
@@ -113,7 +113,7 @@ function cmt {
     echo "total: $num_total"
     $num_immature = (cls $the_env | rg "\s0\.\d" | Measure-Object -Line).Line
     $ratio = $num_immature / $num_total * 100
-    $mature_rate = "{0:N0}" -f $(100 - $ratio)  
+    $mature_rate = "{0:N0}" -f $(100 - $ratio)
     echo "mature rate: $mature_rate %"
 }
 
@@ -137,7 +137,7 @@ function cr {
 # activate environment: $1=name
 function ceat {
     param ( $the_env )
-    if ([string]::IsNullOrEmpty($the_env)) { 
+    if ([string]::IsNullOrEmpty($the_env)) {
         conda activate base; clear
     }
     elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) {
@@ -186,7 +186,7 @@ function cerm {
 function ceep {
     param ( $the_env )
 
-    if ([string]::IsNullOrEmpty($the_env)) { 
+    if ([string]::IsNullOrEmpty($the_env)) {
         $cenv = base
     }
     elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) {
