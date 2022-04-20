@@ -35,7 +35,7 @@ function init_vscode {
             pueue add -g vscode_update " code --install-extension '$line'"
         }
     }
-    Start-Sleep –s 3 
+    Start-Sleep -s 3 
     pueue status
 }
 
@@ -57,7 +57,7 @@ function up_vscode {
             pueue add -g vscode_update " code --install-extension '$line'"
         }
     }
-    Start-Sleep –s 3 
+    Start-Sleep -s 3 
     pueue status
 }
 

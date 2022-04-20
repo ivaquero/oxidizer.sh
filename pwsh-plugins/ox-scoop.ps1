@@ -21,7 +21,7 @@ function init_scoop {
         echo "Installing $line"
         pueue add -g init_scoop "scoop install $line"
     }
-    Start-Sleep –s 3 
+    Start-Sleep -s 3 
     pueue status
 }
 
@@ -37,7 +37,7 @@ function up_scoop {
         echo "Installing $line"
         pueue add -g up_scoop "scoop install $line"
     }
-    Start-Sleep –s 3 
+    Start-Sleep -s 3 
     pueue status
 }
 
@@ -78,7 +78,7 @@ function sisp {
             echo "Installing $pkg"
             pueue add -g scoop_install "scoop install $pkg"
         }
-        Start-Sleep –s 3 
+        Start-Sleep -s 3 
         pueue status
     }
     else { scoop update * }
@@ -94,7 +94,7 @@ function supp {
             echo "Installing $pkg"
             pueue add -g scoop_update "scoop update $pkg"
         }
-        Start-Sleep –s 3 
+        Start-Sleep -s 3 
         pueue status
     }
     else { scoop update * }

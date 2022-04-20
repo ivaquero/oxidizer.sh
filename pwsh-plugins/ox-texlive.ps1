@@ -14,7 +14,7 @@ function init_texlive {
         echo "Installing $line"
         pueue add -g texlive_init "tlmgr install $line"
     }
-    Start-Sleep –s 3
+    Start-Sleep -s 3
     pueue status
 }
 
@@ -30,7 +30,7 @@ function up_texlive {
         echo "Installing $line"
         pueue add -g texlive_update "tlmgr install $line"
     }
-    Start-Sleep –s 3
+    Start-Sleep -s 3
     pueue status
 }
 
