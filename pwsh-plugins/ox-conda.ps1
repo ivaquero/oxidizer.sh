@@ -74,7 +74,7 @@ function cup {
     }
 }
 
-Remove-Item alias:cls
+Remove-Item -Path Alias:\wget
 # list packages
 # $1=name
 function cls {
