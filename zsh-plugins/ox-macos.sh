@@ -27,13 +27,13 @@ clean() {
         rm -rfv $(brew --cache)/Cask/*
         rm -rfv $(brew --cache)/"*\d+*"
         ;;
-    cc)
-        rm -rfv $HOME/Library/Caches/*
-        mkdir -p $(brew --cache)/Cask
+    cr)
+        rm -rfv $HOME/Library/Caches/Google/Chrome/*
         ;;
     zs)
         rm $HOME/.zsh_sessions/*.history*
         rm $HOME/.zsh_sessions/*_timestamp
+        rm $HOME/.zsh_history
         ;;
     vol)
         echo "Emptying trash in Volumes.\n"
