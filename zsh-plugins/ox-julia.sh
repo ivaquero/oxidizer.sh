@@ -72,7 +72,7 @@ jlup() {
 }
 
 # list leave packages
-jllvs() {
+jllv() {
     <$Element[jlp] | rg --only-matching "\w+ =" | sd " =" " "
 }
 

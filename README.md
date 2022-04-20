@@ -234,7 +234,7 @@ Oxidizer aims to provide a unified interface for all package manager-related com
 | `*up`  |   update    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |     ✅     |     ✅     |
 | `*ups` | update self |    ✅    |    ✅     |           |         |            |             |            |            |     ✅     |
 | `*ls`  |    list     |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |     ✅      |     ✅     |     ✅     |     ✅     |
-| `*lvs` |   leaves    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |     ✅     |            |            |
+| `*lv`  |   leaves    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |     ✅     |            |            |
 | `*sc`  |   search    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |            |     ✅     |            |
 | `*cl`  |    clean    |    ✅    |    ✅     |    ✅     |   ✅    |     ✅     |             |     ✅     |            |            |
 | `*if`  |    info     |    ✅    |    ✅     |    ✅     |   ✅    |            |             |            |     ✅     |     ✅     |

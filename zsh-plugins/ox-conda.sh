@@ -91,7 +91,7 @@ cls() {
 
 # list leave packages
 # $1=name
-clvs() {
+clv() {
     if [[ -z $1 ]]; then
         conda-tree leaves
     elif [[ ${#1} < 4 ]]; then

@@ -122,7 +122,7 @@ bupp() {
 
 alias bls="brew list"
 alias blsf="brew list --formula"
-alias blvs="brew leaves"
+alias blv="brew leaves"
 alias bsc="brew search"
 alias bst="brew outdated"
 alias bsta="brew outdated --greedy"

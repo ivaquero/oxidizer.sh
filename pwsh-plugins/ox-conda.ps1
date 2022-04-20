@@ -74,7 +74,8 @@ function cup {
     }
 }
 
-Remove-Item -Path Alias:\cls
+Del alias:cls
+Del alias:clv -Force
 # list packages
 # $1=name
 function cls {
@@ -93,7 +94,7 @@ function cls {
 
 # list leave packages
 # $1=name
-function clvs {
+function clv {
     param ( $the_env )
     if ([string]::IsNullOrEmpty($the_env)) { 
         conda-tree leaves

@@ -58,7 +58,7 @@ function sba { scoop buck add $args }
 
 function sbrm { scoop buck rm $args }
 
-Remove-Item -Path Alias:\sls
+Del alias:sls
 function sls { scoop list }
 
 function sups { scoop update }

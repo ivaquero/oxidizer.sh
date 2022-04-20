@@ -36,8 +36,8 @@ function nupg { npm update -g }
 function nst { npm outdated }
 function nls { npm list }
 function nlsg { npm list -g }
-function nlvs { npm list --depth 0 }
-function nlvsg { npm list --depth 0 -g }
+function nlv { npm list --depth 0 }
+function nlvg { npm list --depth 0 -g }
 function nck { npm doctor }
 function nsc { npm search }
 function ncl { npm cache clean -f }

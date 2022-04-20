@@ -86,7 +86,7 @@ function jlup {
 }
 
 # list leave packages
-function jllvs {
+function jllv {
     cat $global:Element.jlp | rg --only-matching "\w+ =" | sd " =" " "
 }
 
