@@ -74,8 +74,8 @@ function cup {
     }
 }
 
-Del alias:cls
-Del alias:clv -Force
+del alias:cls -Force
+del alias:clv -Force
 # list packages
 # $1=name
 function cls {

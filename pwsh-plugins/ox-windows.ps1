@@ -21,7 +21,7 @@ function open {
 function clean {
     param ( $obj )
     switch ($obj) {
-        sd { Remove-Item -Recurse -Confirm $env:SCOOP\cache }
+        sd { del -Recurse -Confirm $env:SCOOP\cache }
         Default { Clear-RecycleBin -Confirm }
     }
 }
