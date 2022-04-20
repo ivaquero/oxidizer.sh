@@ -33,10 +33,10 @@ export BREW_CN=1
 
 ```powershell
 # define path for Oxidizer
-$env:OXIDIZER = "$env:USERPROFILE/oxidizer"
+$env:OXIDIZER = "$env:USERPROFILE\oxidizer"
 
 git clone --depth=1 https://github.com/ivaquero/oxidizer.sh.git $env:OXIDIZER
-. $env:OXIDIZER/install.ps1
+. $env:OXIDIZER\install.ps1
 ```
 
 - 对中国大陆用户，可设置 `BREW_CN` 变量来下载安装 Homebrew：

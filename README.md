@@ -38,10 +38,10 @@ For Windows
 
 ```powershell
 # define path for Oxidizer
-$env:OXIDIZER = "$env:USERPROFILE/oxidizer"
+$env:OXIDIZER = "$env:USERPROFILE\oxidizer"
 
 git clone --depth=1 https://github.com/ivaquero/oxidizer.sh.git $env:OXIDIZER
-. $env:OXIDIZER/install.ps1
+. $env:OXIDIZER\install.ps1
 ```
 
 Note that Scoop is an essential dependency for Oxidizer on Windows. For China mainland users, you may set `SCOOP_CN` variable to install Scoop through domestic mirror
