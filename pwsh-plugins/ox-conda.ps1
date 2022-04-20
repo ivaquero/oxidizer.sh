@@ -74,6 +74,7 @@ function cup {
     }
 }
 
+Remove-Item alias:cls
 # list packages
 # $1=name
 function cls {
