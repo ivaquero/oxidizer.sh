@@ -175,7 +175,7 @@ The table below shows the informatioin of specific configuration files.
 |   conan    | `cnr`  |    `remote.json`    |
 |   helix    |  `hx`  |    `config.toml`    |
 |   helix    | `hxl`  |  `languages.toml`   |
-|   julia    |  `jl`  |    `startup.jl`     |
+|   julia    | `jls`  |    `startup.jl`     |
 |   julia    | `jlp`  |   `Project.toml`    |
 |   julia    | `jlm`  |   `Manifest.toml`   |
 |   pueue    |  `pu`  |     `pueue.yml`     |

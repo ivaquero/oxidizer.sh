@@ -2,10 +2,13 @@
 # config
 ##########################################################
 
+# oxidizer files
+$global:Oxygen.oxtl = "$env:OXIDIZER/defaults/texlive.txt"
+
 function init_texlive {
     echo "Initialize TeXLive using Oxidizer configuration"
-    $file = (cat $env:OXIDIZER/defaults/texlive.txt)
-    $num = (cat $env:OXIDIZER/defaults/texlive.txt | Measure-Object -Line).Lines
+    $file = (cat $global:Oxygen.oxtl)
+    $num = (cat $global:Oxygen.oxtl | Measure-Object -Line).Lines
 
     pueue group add texlive_init
     pueue parallel $num -g texlive_init
@@ -20,8 +23,8 @@ function init_texlive {
 
 function up_texlive {
     echo "Update TeXLive by self-defined configuration"
-    $file = (cat $env:BACKUP/install/texlive.txt)
-    $num = (cat $env:BACKUP/install/texlive.txt | Measure-Object -Line).Lines
+    $file = (cat $global:Oxide.bktl)
+    $num = (cat $global:Oxide.bktl | Measure-Object -Line).Lines
 
     pueue group add texlive_update
     pueue parallel $num -g texlive_update
@@ -36,7 +39,7 @@ function up_texlive {
 
 function back_texlive {
     echo "Backup TeXLive to $env:BACKUP/install"
-    tlmgr list --only-installed | rg --only-matching "collection-\w+" | rg --invert-match "basic" | Out-File -FilePath "$env:BACKUP/install/texlive.txt"
+    tlmgr list --only-installed | rg --only-matching "collection-\w+" | rg --invert-match "basic" | Out-File -FilePath "$global:Oxide.bktl"
 }
 
 ##########################################################

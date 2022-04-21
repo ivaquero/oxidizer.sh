@@ -4,6 +4,7 @@
 
 # oxidizer files
 Oxygen[oxc]=$OXIDIZER/defaults/.condarc
+Oxygen[oxce]=$OXIDIZER/defaults/conda-base.txt
 # config files
 Element[c]=$HOME/.condarc
 # backup files
@@ -11,7 +12,7 @@ Oxide[bkc]=$BACKUP/.condarc
 
 init_conda() {
     echo "Initialize Conda using Oxidizer configuration"
-    local pkgs=$(cat $OXIDIZER/defaults/conda-base.txt)
+    local pkgs=$(cat ${Oxygen[oxce]})
     echo "Installing $pkgs"
     mamba install $pkgs -q
 }
@@ -19,13 +20,16 @@ init_conda() {
 up_conda() {
     if [[ -z $1 ]]; then
         local conda_env=base
+        local conda_file=${Oxide[bkceb]}
     elif [[ ${#1} < 4 ]]; then
         local conda_env=${Conda_Env[$1]}
+        local conda_file=${Oxide[bkce$1]}
     else
         local conda_env=$1
+        local conda_file=$2
     fi
-    echo "Update Conda Env $conda_env by $BACKUP/install/conda-$conda_env.txt"
-    local pkgs=$(cat $BACKUP/install/conda-$conda_env.txt | sd "\n" " ")
+    echo "Update Conda Env $conda_env by $conda_file"
+    local pkgs=$(cat $conda_file | sd "\n" " ")
     echo "Installing $pkgs"
     mamba install $pkgs -q
 }
@@ -33,13 +37,16 @@ up_conda() {
 back_conda() {
     if [[ -z $1 ]]; then
         local conda_env=base
+        local conda_file=${Oxide[bkceb]}
     elif [[ ${#1} < 4 ]]; then
         local conda_env=${Conda_Env[$1]}
+        local conda_file=${Oxide[bkce$1]}
     else
         local conda_env=$1
+        local conda_file=$2
     fi
-    echo "Backup Conda Env $conda_env to $BACKUP/install"
-    conda tree -n $conda_env leaves | sd "[',\[\]]" "" | sd " " "\n" >$BACKUP/install/conda-$conda_env.txt
+    echo "Backup Conda Env $conda_env to $conda_file"
+    conda tree -n $conda_env leaves | sd "[',\[\]]" "" | sd " " "\n" >$conda_file
 }
 
 ##########################################################

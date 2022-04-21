@@ -2,13 +2,15 @@
 # config
 ##########################################################
 
+# oxidizer files
+Oxygen[oxjl]=$OXIDIZER/defaults/julia.txt
 # config files
 Element[jl]=$HOME/.julia/config/startup.jl
 Element[jlp]=$HOME/.julia/environments/v$(julia -v | rg --only-matching "\d.\d")/Project.toml
 Element[jlm]=$HOME/.julia/environments/v$(julia -v | rg --only-matching "\d.\d")/Manifest.toml
 
 # backup files
-Oxide[bkjl]=$BACKUP/julia/startup.jl
+Oxide[bkjls]=$BACKUP/julia/startup.jl
 
 if [[ ! -d $BACKUP/julia ]]; then
     mkdir -p $BACKUP/julia
@@ -25,7 +27,7 @@ init_julia() {
 
 up_julia() {
     echo "Update Julia by self-defined configuration"
-    local pkgs=[\"$(cat $BACKUP/install/julia.txt | sd '\n' '", "')\"]
+    local pkgs=[\"$(cat ${Oxide[bkjl]} | sd '\n' '", "')\"]
     local pkgs_vec=$(echo $pkgs | sd ', ""' '')
     local cmd=$(echo 'using Pkg; Pkg.add(,,)' | sd ',,' "$pkgs_vec")
     julia --eval "$cmd"
@@ -33,7 +35,7 @@ up_julia() {
 
 back_julia() {
     echo "Backup Julia to $BACKUP/install"
-    cat ${Element[jlp]} | rg --only-matching "\w.*=" | sd "[= ]" "" >$BACKUP/install/julia.txt
+    cat ${Element[jlp]} | rg --only-matching "\w.*=" | sd "[= ]" "" >${Oxide[bkjl]}
 }
 
 ##########################################################

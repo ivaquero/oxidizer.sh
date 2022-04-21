@@ -2,23 +2,26 @@
 # config
 ##########################################################
 
+# oxidizer files
+Oxygen[oxnj]=$OXIDIZER/defaults/node.txt
+
 init_node() {
     echo "Initialize Node using Oxidizer configuration"
-    local pkgs=$(cat $OXIDIZER/defaults/node.txt | sd "\n" " ")
+    local pkgs=$(cat ${Oxygen[bknj]} | sd "\n" " ")
     echo "Installing $pkgs"
     eval "npm install -g $pkgs --force"
 }
 
 up_node() {
     echo "Update Node by self-defined configuration"
-    local pkgs=$(cat $BACKUP/install/node.txt | sd "\n" " ")
+    local pkgs=$(cat ${Oxide[bknj]} | sd "\n" " ")
     echo "Installing $pkgs"
     eval "npm install -g $pkgs --force"
 }
 
 back_node() {
     echo "Backup Node to $BACKUP/install"
-    npm list --depth 0 -g | rg --multiline --only-matching "[\s][@a-z].*[a-z]" | sd " " "" | sd "npm " "" | sd "\n" " " >$BACKUP/install/node.txt
+    npm list --depth 0 -g | rg --multiline --only-matching "[\s][@a-z].*[a-z]" | sd " " "" | sd "npm " "" | sd "\n" " " >${Oxide[bknj]}
 }
 
 ##########################################################

@@ -2,12 +2,13 @@
 # config
 ##########################################################
 
+# oxidizer files
+Oxygen[oxvsx]=$OXIDIZER/defaults/vscode-exts.txt
 # config files
 # use `_` as a suffix flag for directory
 Element[vs]=$APPDATA/Code/User/settings.json
 Element[vsk]=$APPDATA/Code/User/keybindings.json
 Element[vss_]=$APPDATA/Code/User/snippets
-
 # backup files
 Oxide[bkvs]=$BACKUP/vscode/settings.json
 Oxide[bkvsk]=$BACKUP/vscode/keybindings.json
@@ -20,12 +21,12 @@ fi
 init_vscode() {
     echo "Initialize VSCode extensions using Oxidizer configuration"
     local exts=$(code --list-extensions)
-    local num=$(cat $OXIDIZER/defaults/vscode-exts.txt | wc -l | rg --only-matching "\d+")
+    local num=$(cat ${Oxygen[bkvsx]} | wc -l | rg --only-matching "\d+")
 
     pueue group add vscode_init
     pueue parallel $num -g vscode_init
 
-    cat $OXIDIZER/defaults/vscode-exts.txt | while read line; do
+    cat ${Oxygen[bkvsx]} | while read line; do
         if echo $exts | rg $line; then
             echo "Extension $line is already installed."
         else
@@ -39,12 +40,12 @@ init_vscode() {
 up_vscode() {
     echo "Update VSCode extensions by self-defined configuration"
     local exts=$(code --list-extensions)
-    local num=$(cat $BACKUP/install/vscode-exts.txt | wc -l | rg --only-matching "\d+")
+    local num=$(cat ${Oxide[bkvsx]} | wc -l | rg --only-matching "\d+")
 
     pueue group add vscode_init
     pueue parallel $num -g vscode_init
 
-    cat $BACKUP/install/vscode-exts.txt | while read line; do
+    cat ${Oxide[bkvsx]} | while read line; do
         if echo $exts | rg $line; then
             echo "Extension $line is already installed."
         else
@@ -57,7 +58,7 @@ up_vscode() {
 
 back_vscode() {
     echo "Backup VSCode extensions to $BACKUP/install"
-    code --list-extensions >$BACKUP/install/vscode-exts.txt
+    code --list-extensions >${Oxide[bkvsx]}
 }
 
 ##########################################################

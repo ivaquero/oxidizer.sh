@@ -1,12 +1,7 @@
 CSV
 CairoMakie
-Combinatorics
 DataFrames
-DataStructures
 DifferentialEquations
 Distributions
 HTTP
 IJulia
-OhMyREPL
-StatsBase
-XLSX

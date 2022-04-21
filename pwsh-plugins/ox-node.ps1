@@ -2,16 +2,19 @@
 # config
 ##########################################################
 
+# oxidizer files
+$global:Oxygen.oxnj = "$env:OXIDIZER/defaults/node.txt"
+
 function init_node {
     echo "Initialize Node using Oxidizer configuration"
-    $pkgs = (cat $env:OXIDIZER/defaults/node.txt | sd "`n" " ")
+    $pkgs = (cat $global:Oxygen.oxnj | sd "`n" " ")
     echo "Installing $pkgs"
     Invoke-Expression "npm install -g $pkgs --force"
 }
 
 function up_node {
     echo "Update Node by self-defined configuration"
-    $pkgs = (cat $env:BACKUP/install/node.txt | sd "`n" " ")
+    $pkgs = (cat $global:Oxide.bknj | sd "`n" " ")
     echo "Installing $pkgs"
     Invoke-Expression "npm install -g $pkgs --force"
 }
@@ -19,7 +22,7 @@ function up_node {
 function back_node {
     echo "Backup Node to $env:BACKUP/install"
     $pkgs = $(npm list --depth 0 -g | rg --multiline --only-matching "[\s][@a-z].*[a-z]")
-    $pkgs.Replace(" ", "").Replace("npm ", "") | sd "`n" " " | Out-File -FilePath "$env:BACKUP/install/node.txt"
+    $pkgs.Replace(" ", "").Replace("npm ", "") | sd "`n" " " | Out-File -FilePath "$global:Oxide.bknj"
 }
 
 ##########################################################
@@ -62,6 +65,6 @@ function npb { npm publish $args }
 ##########################################################
 
 function nj {
-    if ([string]::IsNullOrEmpty($args)) { node } 
+    if ([string]::IsNullOrEmpty($args)) { node }
     else { node $args }
 }

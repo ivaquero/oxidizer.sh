@@ -53,6 +53,15 @@ $global:INIT_OBJ = @("vscode")
 $global:BACK_OBJ = @("vscode")
 $global:UP_OBJ = @("vscode")
 
+# backup file path
+$global:Oxide.bkb = "$env:BACKUP/install/Brewfile"
+# conda env stats with bkce, and should be consistent with Conda_Env
+$global:Oxide.bkceb = "$env:BACKUP/install/conda-base.txt"
+$global:Oxide.bkjl = "$env:BACKUP/install/julia.txt"
+$global:Oxide.bknj = "$env:BACKUP/install/node.txt"
+$global:Oxide.bktl = "$env:BACKUP/install/texlive.txt"
+$global:Oxide.bkvsx = "$env:BACKUP/install/vscode-exts.txt"
+
 ##########################################################
 # select export and import configurations
 ##########################################################

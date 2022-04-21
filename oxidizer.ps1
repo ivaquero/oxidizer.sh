@@ -32,14 +32,15 @@ $global:Oxygen.oxpw = "$env:OXIDIZER/pwsh-plugins/ox-windows.ps1"
 ##########################################################
 
 $global:Element = @{}
+
 $global:Element.ox = "$env:OXIDIZER/custom.ps1"
 $global:Element.al = "$env:SCOOP/persist/alacritty/alacritty.yml"
 $global:Element.ar = "$env:BASE/.aria2/aria2.conf"
 $global:Element.ps = $PROFILE
 
-. $global:Element.ox
-
 $global:Oxide = @{}
+
+. $global:Element.ox
 
 if ( !(Test-Path "$env:BACKUP/shell") ) {
     New-Item -ItemType Directory -Force -Path "$env:BACKUP/shell"
@@ -55,30 +56,30 @@ $global:Oxide.bkvi = "$env:BACKUP/.vimrc"
 # Aliases
 ##########################################################
 
-function ls { 
-    param ( $path ) 
-    if ([string]::IsNullOrEmpty( $path )) { lsd } 
+function ls {
+    param ( $path )
+    if ([string]::IsNullOrEmpty( $path )) { lsd }
     else { lsd $path }
 }
 function ll {
-    param ( $path ) 
-    if ([string]::IsNullOrEmpty( $path )) { lsd -l } 
-    else { lsd -l $path } 
+    param ( $path )
+    if ([string]::IsNullOrEmpty( $path )) { lsd -l }
+    else { lsd -l $path }
 }
 function la {
-    param ( $path ) 
-    if ([string]::IsNullOrEmpty( $path )) { lsd -a } 
-    else { lsd -a $path } 
+    param ( $path )
+    if ([string]::IsNullOrEmpty( $path )) { lsd -a }
+    else { lsd -a $path }
 }
 function lla {
-    param ( $path ) 
-    if ([string]::IsNullOrEmpty( $path )) { lsd -la } 
-    else { lsd -la $path } 
+    param ( $path )
+    if ([string]::IsNullOrEmpty( $path )) { lsd -la }
+    else { lsd -la $path }
 }
 function lt {
-    param ( $path ) 
-    if ([string]::IsNullOrEmpty( $path )) { lsd --tree } 
-    else { lsd --tree $path } 
+    param ( $path )
+    if ([string]::IsNullOrEmpty( $path )) { lsd --tree }
+    else { lsd --tree $path }
 }
 function cat { bat $args }
 function man { tldr $args }
@@ -189,6 +190,6 @@ Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Key "Ctrl+z" -Function Undo
 
-if ( [Environment]::OSVersion.VersionString.Contains("Windows") ) { 
+if ( [Environment]::OSVersion.VersionString.Contains("Windows") ) {
     Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion" -ErrorAction SilentlyContinue
 }

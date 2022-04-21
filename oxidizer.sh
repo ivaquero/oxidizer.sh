@@ -39,6 +39,7 @@ Oxygen[oxpzj]=$OXIDIZER/zsh-plugins/ox-zellij.sh
 ##########################################################
 
 declare -A Element
+
 Element[ox]=$OXIDIZER/custom.sh
 Element[al]=$HOME/.config/alacritty/alacritty.yml
 Element[ar]=$HOME/.aria2/aria2.conf
@@ -46,9 +47,9 @@ Element[vi]=$HOME/.vimrc
 Element[zs]=$HOME/.zshrc
 Element[bs]=$HOME/.bash_profile
 
-. ${Element[ox]}
-
 declare -A Oxide
+
+. ${Element[ox]}
 
 if [[ ! -d $BACKUP/shell ]]; then
     mkdir -p $BACKUP/shell

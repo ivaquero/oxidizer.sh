@@ -4,6 +4,7 @@
 
 # oxidizer files
 $global:Oxygen.oxc = "$env:OXIDIZER/defaults/.condarc"
+$global:Oxygen.oxce = "$env:OXIDIZER/defaults/conda-base.txt"
 # config files
 $global:Element.c = "$env:BASE/.condarc"
 # backup files
@@ -11,36 +12,50 @@ $global:Oxide.bkc = "$env:BACKUP/.condarc"
 
 function init_conda {
     echo "Initialize Conda using Oxidizer configuration"
-    $pkgs = cat $env:OXIDIZER/defaults/conda-base.txt
+    $pkgs = cat $global:Oxygen.oxce
     echo "Installing $pkgs"
     mamba install $pkgs -q
 }
 
 function up_conda {
-    param ( $the_env )
+    param ( $the_env, $the_file )
     if ([string]::IsNullOrEmpty($the_env)) {
         $cenv = "base"
+        $conda_file = "$global:Oxide.bkceb"
     }
-    elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) { $cenv = $global:Conda_Env.$the_env }
-    else { $cenv = $the_env }
+    elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) {
+        $cenv = $global:Conda_Env.$the_env
+        $conda_file = "$global:Oxide.bkce$the_env"
+    }
+    else {
+        $cenv = $the_env
+        $conda_file = $the_file
+    }
 
-    echo "Update Conda Env $cenv by $env:BACKUP/install/conda-$cenv.txt"
-    $pkg = cat $env:BACKUP/install/conda-$cenv.txt | sd "`n" " "
+    echo "Update Conda Env $cenv by $conda_file"
+    $pkg = cat $conda_file | sd "`n" " "
     echo "Installing $pkg"
     mamba install $pkg -q
 }
 
 function back_conda {
-    param ( $the_env )
+    param ( $the_env, $the_file )
     if ([string]::IsNullOrEmpty($the_env)) {
         $cenv = "base"
+        $conda_file = "$global:Oxide.bkceb"
     }
-    elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) { $cenv = $global:Conda_Env.$the_env }
-    else { $cenv = $the_env }
+    elseif ( $($the_env | Measure-Object -Character).Character -lt 3 ) {
+        $cenv = $global:Conda_Env.$the_env
+        $conda_file = "$global:Oxide.bkce$the_env"
+    }
+    else {
+        $cenv = $the_env
+        $conda_file = $the_file
+    }
 
-    echo "Backup Conda Env $cenv to $env:BACKUP/install"
+    echo "Backup Conda Env $cenv to $conda_file"
     $pkg = $(conda tree -n $cenv leaves)
-    $pkg.Replace("[',\[\]]", "") | sd " " "`n" | Out-File -FilePath $env:BACKUP/install/conda-$cenv.txt
+    $pkg.Replace("[',\[\]]", "") | sd " " "`n" | Out-File -FilePath "$conda_file"
 }
 
 ##########################################################

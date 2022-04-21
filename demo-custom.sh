@@ -67,6 +67,15 @@ export BACK_OBJ=(brew)
 declare -a UP_OBJ
 export UP_OBJ=(brew)
 
+# backup file path
+Oxide[bkb]=$BACKUP/install/Brewfile
+# conda env stats with bkce, and should be consistent with Conda_Env
+Oxide[bkceb]=$BACKUP/install/conda-base.txt
+Oxide[bkjl]=$BACKUP/install/julia.txt
+Oxide[bknj]=$BACKUP/install/node.txt
+Oxide[bktl]=$BACKUP/install/texlive.txt
+Oxide[bkvsx]=$BACKUP/install/vscode-exts.txt
+
 ##########################################################
 # select export and import configurations
 ##########################################################
@@ -103,9 +112,6 @@ IIF_OBJ=(ar)
 
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_ENV_HINTS=true
-
-# brew backup path
-export HOMEBREW_BUNDLE_FILE=$BACKUP/install/Brewfile
 
 # brew mirrors for faster download, use `bmr` to use
 # declare -A Brew_Mirror
