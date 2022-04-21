@@ -98,7 +98,7 @@ case $(uname -a) in
     ;;
 esac
 
-for plugin in $PLUGINS[@]; do
+for plugin in ${PLUGINS[@]}; do
     . ${Oxygen[$plugin]}
 done
 
