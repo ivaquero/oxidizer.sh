@@ -166,24 +166,34 @@ alias ccc="local HISTSIZE=0 && history -p && reset"
 
 # tools
 alias ar="aria2c --dir $DOWNLOAD"
+alias hf="hyperfine"
 
 ##########################################################
-# zsh
+# shell
 ##########################################################
 
-# zmodload zsh/zprof
-# zmodload zsh/mathfunc
+case $SHELL in
+*zsh)
+    # turn case sensitivity off
+    zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# alias tt="\time zsh -i -c exit"
+    # global
+    alias -g w0="| rg '\s0\.\d+'"
 
-# # turn case sensitivity off
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+    # test
+    alias tt="hyperfine --warmup 3 --shell zsh 'source ~/.zshrc'"
+    ;;
+*bash)
+    # turn case sensitivity off
+    if [ ! -a ~/.inputrc ]; then
+        echo '$include /etc/inputrc' >~/.inputrc
+    fi
+    echo 'set completion-ignore-case On' >>~/.inputrc
 
-# global
-#
-# w: wordcount, l: line, w:word
-# alias -g w0="| rg '\s0\.\d+'"
-# alias -g wl="| wc -l"
+    # test
+    alias tt="hyperfine --warmup 3 --shell bash 'source ~/.bash_profile'"
+    ;;
+esac
 
 ##########################################################
 # startup commands

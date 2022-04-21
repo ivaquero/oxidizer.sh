@@ -20,12 +20,12 @@ fi
 init_vscode() {
     echo "Initialize VSCode extensions using Oxidizer configuration"
     local exts=$(code --list-extensions)
-    local num=$(<$OXIDIZER/defaults/vscode-exts.txt | wc -l | rg --only-matching "\d+")
+    local num=$(cat $OXIDIZER/defaults/vscode-exts.txt | wc -l | rg --only-matching "\d+")
 
     pueue group add vscode_init
     pueue parallel $num -g vscode_init
 
-    <$OXIDIZER/defaults/vscode-exts.txt | while read line; do
+    cat $OXIDIZER/defaults/vscode-exts.txt | while read line; do
         if echo $exts | rg $line; then
             echo "Extension $line is already installed."
         else
@@ -39,12 +39,12 @@ init_vscode() {
 up_vscode() {
     echo "Update VSCode extensions by self-defined configuration"
     local exts=$(code --list-extensions)
-    local num=$(<$BACKUP/install/vscode-exts.txt | wc -l | rg --only-matching "\d+")
+    local num=$(cat $BACKUP/install/vscode-exts.txt | wc -l | rg --only-matching "\d+")
 
     pueue group add vscode_init
     pueue parallel $num -g vscode_init
 
-    <$BACKUP/install/vscode-exts.txt | while read line; do
+    cat $BACKUP/install/vscode-exts.txt | while read line; do
         if echo $exts | rg $line; then
             echo "Extension $line is already installed."
         else

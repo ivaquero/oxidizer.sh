@@ -4,14 +4,14 @@
 
 init_node() {
     echo "Initialize Node using Oxidizer configuration"
-    local pkgs=$(<$OXIDIZER/defaults/node.txt | sd "\n" " ")
+    local pkgs=$(cat $OXIDIZER/defaults/node.txt | sd "\n" " ")
     echo "Installing $pkgs"
     eval "npm install -g $pkgs --force"
 }
 
 up_node() {
     echo "Update Node by self-defined configuration"
-    local pkgs=$(<$BACKUP/install/node.txt | sd "\n" " ")
+    local pkgs=$(cat $BACKUP/install/node.txt | sd "\n" " ")
     echo "Installing $pkgs"
     eval "npm install -g $pkgs --force"
 }

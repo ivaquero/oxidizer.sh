@@ -11,7 +11,7 @@ Oxide[bkc]=$BACKUP/.condarc
 
 init_conda() {
     echo "Initialize Conda using Oxidizer configuration"
-    local pkgs=$(<$OXIDIZER/defaults/conda-base.txt)
+    local pkgs=$(cat $OXIDIZER/defaults/conda-base.txt)
     echo "Installing $pkgs"
     mamba install $pkgs -q
 }
@@ -25,7 +25,7 @@ up_conda() {
         local conda_env=$1
     fi
     echo "Update Conda Env $conda_env by $BACKUP/install/conda-$conda_env.txt"
-    local pkgs=$(<$BACKUP/install/conda-$conda_env.txt | sd "\n" " ")
+    local pkgs=$(cat $BACKUP/install/conda-$conda_env.txt | sd "\n" " ")
     echo "Installing $pkgs"
     mamba install $pkgs -q
 }

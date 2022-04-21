@@ -8,12 +8,12 @@ fi
 
 init_texlive() {
     echo "Initialize TeXLive using Oxidizer configuration"
-    local num=$(<$OXIDIZER/defaults/texlive.txt | wc -l | rg --only-matching "\d+")
+    local num=$(cat $OXIDIZER/defaults/texlive.txt | wc -l | rg --only-matching "\d+")
 
     pueue group add texlive_init
     pueue parallel $num -g texlive_init
 
-    <$OXIDIZER/defaults/texlive.txt | while read line; do
+    cat $OXIDIZER/defaults/texlive.txt | while read line; do
         echo "Installing $line"
         pueue add -g texlive_init "tlmgr install $line"
     done
@@ -22,12 +22,12 @@ init_texlive() {
 
 up_texlive() {
     echo "Update TeXLive by self-defined configuration"
-    local num=$(<$BACKUP/install/texlive.txt | wc -l | rg --only-matching "\d+")
+    local num=$(cat $BACKUP/install/texlive.txt | wc -l | rg --only-matching "\d+")
 
     pueue group add texlive_update
     pueue parallel $num -g texlive_update
 
-    <$BACKUP/install/texlive.txt | while read line; do
+    cat $BACKUP/install/texlive.txt | while read line; do
         echo "Installing $line"
         pueue add -g texlive_update "tlmgr install $line"
     done

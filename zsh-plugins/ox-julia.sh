@@ -16,7 +16,7 @@ fi
 
 init_julia() {
     echo "Initialize Julia using Oxidizer configuration"
-    local pkgs=[\"$(<$OXIDIZER/defaults/julia.txt | sd '\n' '", "')\"]
+    local pkgs=[\"$(cat $OXIDIZER/defaults/julia.txt | sd '\n' '", "')\"]
     local pkgs_vec=$(echo $pkgs | sd ', ""' '')
     echo "Installing $pkgs_vec"
     local cmd=$(echo 'using Pkg; Pkg.add(,,)' | sd ',,' "$pkgs_vec")
@@ -25,7 +25,7 @@ init_julia() {
 
 up_julia() {
     echo "Update Julia by self-defined configuration"
-    local pkgs=[\"$(<$BACKUP/install/julia.txt | sd '\n' '", "')\"]
+    local pkgs=[\"$(cat $BACKUP/install/julia.txt | sd '\n' '", "')\"]
     local pkgs_vec=$(echo $pkgs | sd ', ""' '')
     local cmd=$(echo 'using Pkg; Pkg.add(,,)' | sd ',,' "$pkgs_vec")
     julia --eval "$cmd"
@@ -33,7 +33,7 @@ up_julia() {
 
 back_julia() {
     echo "Backup Julia to $BACKUP/install"
-    <$Element[jlp] | rg --only-matching "\w.*=" | sd "[= ]" "" >$BACKUP/install/julia.txt
+    cat ${Element[jlp]} | rg --only-matching "\w.*=" | sd "[= ]" "" >$BACKUP/install/julia.txt
 }
 
 ##########################################################
@@ -73,12 +73,12 @@ jlup() {
 
 # list leave packages
 jllv() {
-    <$Element[jlp] | rg --only-matching "\w+ =" | sd " =" " "
+    cat ${Element[jlp]} | rg --only-matching "\w+ =" | sd " =" " "
 }
 
 # list packages
 jlls() {
-    <$Element[jlm] | rg --only-matching "deps\.\w+" | sd "deps\." ""
+    cat ${Element[jlm]} | rg --only-matching "deps\.\w+" | sd "deps\." ""
 }
 
 jlpn() {
@@ -95,9 +95,9 @@ jlupn() {
 
 # calculate mature rate
 jlmt() {
-    local num_total=$(<$Element[jlm] | rg "\[\[" | wc -l)
+    local num_total=$(cat ${Element[jlm]} | rg "\[\[" | wc -l)
     echo "total: $num_total"
-    local num_immature=$(<$Element[jlm] | rg '"0\.' | wc -l)
+    local num_immature=$(cat ${Element[jlm]} | rg '"0\.' | wc -l)
     local mature_rate=$((100 - num_immature * 100 / num_total))
     echo "mature rate: $mature_rate %"
 }

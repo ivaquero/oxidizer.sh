@@ -99,8 +99,8 @@ Oxidizer is origenally designed for **non-administrator** users. It quickly sets
 ### 3.3. Other Useful Rust Tools
 
 - [x] `pueue`: Command-line task management tool for sequential and parallel execution of long-running tasks.
-- [x] `delta`: A syntax-highlighting pager for git, diff, and grep output
-- [ ] `hyperfine`: Command-line benchmarking tool
+- [x] `hyperfine`: Command-line benchmarking tool
+- [ ] `delta`: A syntax-highlighting pager for git, diff, and grep output
 - [ ] `mdbook`: A utility to create modern online books from Markdown files.
 
 ### 3.4. Summary of Plugins

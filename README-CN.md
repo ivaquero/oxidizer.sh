@@ -88,8 +88,8 @@ ef ox
 ### 3.3. 其他实用的 Rust 工具
 
 - [x] `pueue`：命令行并行任务管理器
-- [x] `delta`：`git diff` 渲染器
-- [ ] `hyperfine`
+- [x] `hyperfine`：命令行性能测试工具
+- [ ] `delta`：`git diff` 渲染器
 - [ ] `mdbook`
 
 ### 3.4. 插件总结
