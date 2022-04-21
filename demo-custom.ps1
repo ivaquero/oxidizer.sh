@@ -54,7 +54,7 @@ $global:BACK_OBJ = @("vscode")
 $global:UP_OBJ = @("vscode")
 
 # backup file path
-$global:Oxide.bkb = "$env:BACKUP/install/Brewfile"
+$global:Oxide.bks = "$env:BACKUP/install/Scoopfile.txt"
 # conda env stats with bkce, and should be consistent with Conda_Env
 $global:Oxide.bkceb = "$env:BACKUP/install/conda-base.txt"
 $global:Oxide.bkjl = "$env:BACKUP/install/julia.txt"
@@ -113,10 +113,17 @@ $global:Rust_Mirror.zk = "mirrors.ustc.edu.cn"
 function wh { which $args }
 function e { echo $args }
 function rr { del -Recurse $args }
-function du { dust $args }
 function c { clear }
+
 # tools
 function ar { aria2c --dir $env:DOWNLOAD $args }
+function hf { hyperfine $args }
+
+##########################################################
+# powerShell
+##########################################################
+
+function tt { hyperfine --warmup 3 --shell pwsh '. $PROFILE' }
 
 ##########################################################
 # startup & daily commands
