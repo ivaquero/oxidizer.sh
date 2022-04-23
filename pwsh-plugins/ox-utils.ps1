@@ -44,12 +44,12 @@ function ipf {
                 Copy-Item -Verbose -Path $in_file -Destination $out_file
             }
         }
-        else { 
+        else {
             $parentpath = ( Get-Item $global:Element.$file ).DirectoryName
             if (!(Test-Path $parentpath)) {
                 New-Item -ItemType Directory -Force -Path $parentpath
             }
-            Copy-Item -Verbose -Path $global:Oxide.$bkfile -Destination $global:Element.$file 
+            Copy-Item -Verbose -Path $global:Oxide.$bkfile -Destination $global:Element.$file
         }
     }
 }
@@ -68,7 +68,7 @@ function iif {
                 Copy-Item -Verbose -Path $in_file -Destination $out_file
             }
         }
-        else { 
+        else {
             $parentpath = ( Get-Item $global:Element.$file ).DirectoryName
             if ( !(Test-Path $parentpath) ) {
                 New-Item -ItemType Directory -Force -Path $parentpath
@@ -93,12 +93,12 @@ function dpf {
                 Copy-Item -Verbose -Path $in_file -Destination $out_file
             }
         }
-        else { 
+        else {
             $parentpath = ( Get-Item $global:Oxide.$bkfile ).DirectoryName
             if ( !(Test-Path $parentpath) ) {
                 New-Item -ItemType Directory -Force -Path $parentpath
             }
-            Copy-Item -Verbose -Path $global:Oxygen.$oxfile -Destination $global:Oxide.$bkfile 
+            Copy-Item -Verbose -Path $global:Oxygen.$oxfile -Destination $global:Oxide.$bkfile
         }
     }
 }
@@ -109,7 +109,7 @@ function dpf {
 
 # refresh file
 function ff {
-    . $global:Element.ps
+    & $profile
 }
 
 # browse file
