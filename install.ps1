@@ -24,7 +24,7 @@ else {
     else { & $f_scoop }
 }
 
-scoop install aria2 
+scoop install aria2
 scoop install 7zip
 
 # add additional buckets
@@ -49,7 +49,7 @@ if (Get-Command code -ErrorAction SilentlyContinue) {
     Write-Host "VS Code Already Installed"
 }
 else {
-    scoop install vscode 
+    scoop install vscode
 }
 
 ###################################################
@@ -75,13 +75,13 @@ if ( !(Test-Path $PROFILE) ) {
 echo "
 #Oxidizer" >> $PROFILE
 
-if ( [Environment]::OSVersion.VersionString.Contains("Unix") ) { 
+if ( [Environment]::OSVersion.VersionString.Contains("Unix") ) {
     echo '$env:BASE = $env:HOME' >> $PROFILE
 }
 else { echo '$env:BASE = $env:USERPROFILE' >> $PROFILE }
 
 echo '
-if ( [string]::IsNullOrEmpty($env:OXIDIZER) ) { 
+if ( [string]::IsNullOrEmpty($env:OXIDIZER) ) {
     $env:OXIDIZER = "$env:BASE\oxidizer"
 }
 . $env:OXIDIZER\oxidizer.ps1' >> $PROFILE
@@ -94,21 +94,6 @@ sd '.* STARTUP=.*' '$global:STARTUP=1' "$env:OXIDIZER\custom.ps1"
 
 # set path of oxidizer
 sd '= .*\oxidizer.ps1' "= $env:OXIDIZER\oxidizer.ps1" $PROFILE
-
-###################################################
-# Update PowerShell Modules
-###################################################
-
-echo "⚙️ Installing PowerShell Modules"
-
-$modules = @("PowerShellGet", "PSReadLine")
-
-ForEach ( $module in $modules ) {
-    $len = (Get-Module $module).Name.Length
-    if ($len -eq 0) {
-        Install-Module -Name $module -Scope CurrentUser -Force -AllowClobber
-    }
-}
 
 echo "🥳 Oxidizer installation complete!"
 

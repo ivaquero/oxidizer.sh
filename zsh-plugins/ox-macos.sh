@@ -24,15 +24,22 @@ update() {
 
 clean() {
     case $1 in
-    bd)
+    bdl)
+        echo "Cleaning up Homebrew Downloads.\n"
         rm -rfv $(brew --cache)/downloads/*
         rm -rfv $(brew --cache)/Cask/*
         rm -rfv $(brew --cache)/"*\d+*"
         ;;
+    vs)
+        echo "Cleaning up VSCode Cache.\n"
+        rm -rfv $HOME/Library/'Application Support'/Code/Cache/*
+        ;;
     cr)
+        echo "Cleaning up Chrome Cache.\n"
         rm -rfv $CACHES/Google/Chrome/*
         ;;
     zs)
+        echo "Cleaning up ZSH history.\n"
         rm $HOME/.zsh_sessions/*.history*
         rm $HOME/.zsh_sessions/*_timestamp
         rm $HOME/.zsh_history

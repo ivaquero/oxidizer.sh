@@ -11,5 +11,6 @@ tealdeer
 zoxide
 scoop-completion
 posh-git
+psreadline
 sudo
 busybox
