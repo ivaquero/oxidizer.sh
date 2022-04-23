@@ -77,16 +77,6 @@ hide() {
     chflags hidden $1
 }
 
-reboot() {
-    if [[ -z $1 ]]; then
-        echo "Rebooting $1.\n"
-        sudo shutdown -r now
-    else
-        echo "Rebooting in $1 seconds.\n"
-        sudo shutdown -r "+$1"
-    fi
-}
-
 shutdown() {
     if [[ -z $1 ]]; then
         echo "Shutting down.\n"
@@ -94,6 +84,16 @@ shutdown() {
     else
         echo "Shutting down in $1 seconds.\n"
         sudo shutdown -h $1
+    fi
+}
+
+restart() {
+    if [[ -z $1 ]]; then
+        echo "Restarting $1.\n"
+        sudo shutdown -r now
+    else
+        echo "Restarting in $1 seconds.\n"
+        sudo shutdown -r "+$1"
     fi
 }
 

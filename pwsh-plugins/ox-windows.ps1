@@ -26,6 +26,18 @@ function clean {
     }
 }
 
+function hide {
+    $file = Get-Item $args[0] -Force
+    $file.attributes = 'Hidden'
+}
+function shutdown {
+    Stop-Computer -Force
+}
+
+function restart {
+    Restart-Computer -Force
+}
+
 ##########################################################
 # winget
 ##########################################################
