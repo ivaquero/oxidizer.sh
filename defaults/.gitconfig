@@ -10,23 +10,8 @@ program = gpg
 [pull]
 rebase = false
 
-[pager]
-diff = delta
-log = delta
-reflog = delta
-show = delta
-
 [interactive]
 diffFilter = delta --color-only --features=interactive
-
-[delta]
-features = decorations
-side-by-side = true
-line-numbers = true
-navigate = true
-
-[delta "interactive"]
-keep-plus-minus-markers = false
 
 [merge]
 conflictstyle = diff3
