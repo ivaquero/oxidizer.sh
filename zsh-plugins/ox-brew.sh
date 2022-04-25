@@ -223,12 +223,8 @@ biscp() {
 }
 
 bupap() {
-    local pkgs=$(brew outdated)
-    local casks=$(brew outdated --greedy-auto-updates)
-
-    local num_pkgs=$(echo $pkgs | wc -l | sd " " "")
-    local num_casks=$(echo $casks | wc -l | sd " " "")
-    local num=$((num_pkgs + num_casks))
+    local pkgs=$(brew outdated --greedy-auto-updates)
+    local num=$(echo $pkgs | wc -l | sd " " "")
 
     if [[ $num > 1 ]]; then
         echo "Trying to update $num pkgs in parallel"
@@ -239,13 +235,10 @@ bupap() {
             echo "upgrade $line"
             pueue add -g brew_upgrade_greedy "brew upgrade $line"
         done
-        echo $casks | while read line; do
-            echo "upgrade $line"
-            pueue add -g brew_upgrade_greedy "brew upgrade $line"
-        done
+
         sleep 3 && pueue status
     else
-        brew update $pkgs
+        brew upgrade $pkgs
     fi
 }
 
