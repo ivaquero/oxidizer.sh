@@ -252,7 +252,7 @@ alias bec="be --cask"
 
 # download by aria2
 bdl() {
-    local url=$(brew info --cask $1 | rg \"url\" | rg --only-matching \"https:.+\" -m 1)
+    local url=$(brew info --cask --json=v2 $1 | rg \"url\" | rg --only-matching \"https:.+\" -m 1)
     echo "downloading from $url to $DOWNLOAD"
     eval $(aria2c --dir $DOWNLOAD $url)
 }
