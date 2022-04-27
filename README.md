@@ -442,7 +442,7 @@ wtr [location]
 - `update`: update system
 - `clean`
   - `clean`: empty trash
-  - `clean bd`: clean homebrew downloaded files
+  - `clean bdl`: clean homebrew downloaded files
   - `clean cc`: clean cache files in `$HOME/Library/Caches/`
   - `clean log`: clean logs
 - `allow`: allow installation of uncertified apps

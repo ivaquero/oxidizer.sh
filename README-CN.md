@@ -380,7 +380,7 @@ mdto [文件名] [格式]
 - `update`：更新系统
 - `clean`：
   - `clean`：清理垃圾
-  - `clean bd`：清理 homebrew 下载文件
+  - `clean bdl`：清理 homebrew 下载文件
   - `clean log`：清理日志
   - `clean cc`：清理缓存
 - `allow`：允许运行非官方来源 App
