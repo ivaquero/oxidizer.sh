@@ -70,11 +70,11 @@ export UP_OBJ=(brew)
 # backup file path
 Oxide[bkb]=$BACKUP/install/Brewfile
 # conda env stats with bkce, and should be consistent with Conda_Env
-Oxide[bkceb]=$BACKUP/install/conda-base.txt
-Oxide[bkjl]=$BACKUP/install/julia.txt
-Oxide[bknj]=$BACKUP/install/node.txt
-Oxide[bktl]=$BACKUP/install/texlive.txt
-Oxide[bkvsx]=$BACKUP/install/vscode-exts.txt
+# Oxide[bkceb]=$BACKUP/install/conda-base.txt
+# Oxide[bkjl]=$BACKUP/install/julia.txt
+# Oxide[bknj]=$BACKUP/install/node.txt
+# Oxide[bktl]=$BACKUP/install/texlive.txt
+# Oxide[bkvsx]=$BACKUP/install/vscode-exts.txt
 
 ##########################################################
 # select export and import configurations
