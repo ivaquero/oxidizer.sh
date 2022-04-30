@@ -12,9 +12,9 @@ Oxide[bkc]=$BACKUP/.condarc
 
 init_conda() {
     echo "Initialize Conda using Oxidizer configuration"
-    local pkgs=$(cat ${Oxygen[oxce]})
+    local pkgs=$(cat ${Oxygen[oxce]} | sd "\n" " ")
     echo "Installing $pkgs"
-    mamba install $pkgs -q
+    eval "mamba install $pkgs"
 }
 
 up_conda() {
@@ -31,7 +31,7 @@ up_conda() {
     echo "Update Conda Env $conda_env by $conda_file"
     local pkgs=$(cat $conda_file | sd "\n" " ")
     echo "Installing $pkgs"
-    mamba install $pkgs -q
+    eval "mamba install $pkgs"
 }
 
 back_conda() {

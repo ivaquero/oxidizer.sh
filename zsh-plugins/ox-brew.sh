@@ -200,10 +200,10 @@ alias brisc="bris --cask"
 alias bupc="bup --cask"
 
 bupa() {
-    local pkgs=$(brew outdated)
-    local casks=$(brew outdated --greedy-auto-updates)
-    brew upgrade $pkgs
-    brew upgrade $casks
+    local pkgs=$(brew outdated | sd "\n" " ")
+    local casks=$(brew outdated --greedy-auto-updates | sd "\n" " ")
+    eval "brew upgrade $pkgs"
+    eval "brew upgrade $casks"
 }
 
 biscp() {

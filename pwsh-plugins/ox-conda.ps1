@@ -12,9 +12,9 @@ $global:Oxide.bkc = "$env:BACKUP/.condarc"
 
 function init_conda {
     echo "Initialize Conda using Oxidizer configuration"
-    $pkgs = cat $global:Oxygen.oxce
+    $pkgs = cat $global:Oxygen.oxce | sd "`n" " "
     echo "Installing $pkgs"
-    mamba install $pkgs -q
+    Invoke-Expression "mamba install $pkgs"
 }
 
 function up_conda {
@@ -35,7 +35,7 @@ function up_conda {
     echo "Update Conda Env $cenv by $conda_file"
     $pkg = cat $conda_file | sd "`n" " "
     echo "Installing $pkg"
-    mamba install $pkg -q
+    Invoke-Expression "mamba install $pkgs"
 }
 
 function back_conda {
