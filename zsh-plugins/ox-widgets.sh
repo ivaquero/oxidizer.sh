@@ -31,9 +31,8 @@ wtr() {
 # zip files
 ##########################################################
 
-# zf
 # $1=input-name, $2=output-name
-zf() {
+zipf() {
     local file=${1%%.*}
 
     if [[ -z $2 ]]; then
@@ -70,9 +69,8 @@ zf() {
     esac
 }
 
-# uzf
 # $1=input-name, $2=output-name
-uzf() {
+unzipf() {
     if [[ -z $2 ]]; then
         local dir=$(dirname $1)
     else
@@ -107,4 +105,13 @@ uzf() {
         unzip $1 $dir
         ;;
     esac
+}
+
+##########################################################
+# text
+##########################################################
+
+# $1=old, $2=new, $3=path
+replace() {
+    sd $1 $2 $(fd $3)
 }
