@@ -108,10 +108,18 @@ unzipf() {
 }
 
 ##########################################################
-# text
+# batch management
 ##########################################################
 
 # $1=old, $2=new, $3=path
 replace() {
-    sd $1 $2 $(fd $3)
+    sd "$1" "$2" $(fd "$3")
+}
+
+# $1=old, $2=new
+rename() {
+    fd "$1" | while read file; do
+        new=$(echo $file | sd "$1" "$2")
+        mv $file $new
+    done
 }

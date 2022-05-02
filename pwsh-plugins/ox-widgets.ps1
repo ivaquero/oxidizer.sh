@@ -22,11 +22,11 @@ function wtr {
 }
 
 ##########################################################
-# text
+# batch management
 ##########################################################
 
 # $1=old, $2=new, $3=path
 function replace {
     param ( $old, $new, $path )
-    sd $old $new $(fd $path)
+    sd "$old" "$new" $(fd "$path")
 }
