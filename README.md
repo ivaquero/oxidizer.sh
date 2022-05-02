@@ -144,7 +144,7 @@ Of course, you are allowed to write your own plugins, see [[10. Writing A Plugin
 ![design](https://raw.githubusercontent.com/ivaquero/blog-bio/master/tutorials/images/cmd/oxidizer-design.png)
 
 - `ff`
-  - refresh file by `source` (default: Zsh)
+  - refresh file by `source`
 - `ef`
   - file: edit by `$EDITOR` (default: VSCode)
 - `bf`

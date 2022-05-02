@@ -130,7 +130,7 @@ ef ox
 ![design](https://raw.githubusercontent.com/ivaquero/blog-bio/master/tutorials/images/cmd/oxidizer-design.png)
 
 - `ff`
-  - 通过 `source` 刷新（ 默认：Zsh ）
+  - 通过 `source` 刷新
 - `ef`
   - 通过 `$EDITOR` 编辑（ 默认：VSCode ）
 - `bf`
