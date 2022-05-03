@@ -110,34 +110,38 @@ Oxidizer is designed to be extensible, you can personalize `PLUGINS` in `custom.
 
 Of course, you are allowed to write your own plugins, see [[10. Writing A Plugin]] for details.
 
-| index | Plugin  | Linux  | macOS | Windows | required ? |
-| :---: | :-----: | :----: | :---: | :-----: | :--------: |
-|   1   |  Brew   |   ✅   |  ✅   |   ❌    |     ✅     |
-|   2   |  Scoop  |   ❌   |  ❌   |   ✅    |     ✅     |
-|   3   | Utility |   ✅   |  ✅   |   ✅    |     ✅     |
-|   4   | System  | ✅[^1] |  ✅   |   ✅    |     ✅     |
-|   5   |  Pueue  |   ✅   |  ✅   |   ✅    |     ✅     |
-|   6   |   Git   |   ✅   |  ✅   |   ✅    |            |
-|   7   |  Conan  |   ✅   |  ✅   |   ✅    |            |
-|   8   |  Conda  |   ✅   |  ✅   |   ✅    |            |
-|   9   | Docker  |   ✅   |  ✅   |   ✅    |            |
-|  10   |  Julia  |   ✅   |  ✅   |   🚧    |            |
-|  11   |  Node   |   ✅   |  ✅   |   ✅    |            |
-|  12   |  Rust   |   ✅   |  ✅   |   ✅    |            |
-|  13   | TeXLive |   ✅   |  ✅   |   ✅    |            |
-|  14   | VS Code |   ✅   |  ✅   |   ✅    |            |
-|  15   | Formats |   🕒   |  🕒   |   🕒    |            |
-|  16   | Widgets |   🕒   |  🕒   |   🕒    |            |
-|  17   | Zellij  |   ✅   |  ✅   |   ❌    |            |
-|  18   | NeoVim  |        |       |         |            |
-|  19   |  Helix  |        |       |         |            |
+| index | Plugin  | Linux | macOS | Windows | required ? |
+| :---: | :-----: | :---: | :---: | :-----: | :--------: |
+|   1   |  Brew   |  ✅   |  ✅   |   ❌    |     ✅     |
+|   2   |  Scoop  |  ❌   |  ❌   |   ✅    |     ✅     |
+|   3   | Utility |  ✅   |  ✅   |   ✅    |     ✅     |
+|   4   | System  | ✅[¹] |  ✅   |   ✅    |     ✅     |
+|   5   |  Pueue  |  ✅   |  ✅   |   ✅    |     ✅     |
+|   6   |   Git   |  ✅   |  ✅   |   ✅    |            |
+|   7   |  Conan  |  ✅   |  ✅   |   ✅    |            |
+|   8   |  Conda  |  ✅   |  ✅   |   ✅    |            |
+|   9   | Docker  |  ✅   |  ✅   |   ✅    |            |
+|  10   |  Julia  |  ✅   |  ✅   |   🚧    |            |
+|  11   |  Node   |  ✅   |  ✅   |   ✅    |            |
+|  12   |  Rust   |  ✅   |  ✅   |   ✅    |            |
+|  13   | TeXLive |  ✅   |  ✅   |   ✅    |            |
+|  14   | VS Code |  ✅   |  ✅   |   ✅    |            |
+|  15   | Formats |  🕒   |  🕒   |   🕒    |            |
+|  16   | Widgets |  🕒   |  🕒   |   🕒    |            |
+|  17   | Zellij  |  ✅   |  ✅   |   ❌    |            |
+|  18   | NeoVim  |       |       |         |            |
+|  19   |  Helix  |       |       |         |            |
 
 ✅: complete functionality
 🚧: partial functionality
 🕒: basic functionality, needs more features
 ❌: not exist
 
-[^1]: Currently, on Linux only provide with Ubuntu-specific shortcuts.
+> [¹]: Currently, on Linux only provide with Ubuntu-specific shortcuts.
+
+Oxidizer uses Homebrew or Scoop to manage packages and softwares to bypass the requirement of administrator privilege.
+
+For Linux users, you can try to add Homebrew tap [Hombrew-Linux](https://github.com/ivaquero/homebrew-linux/) to install GUI Applications.
 
 ## 4. File Management
 
