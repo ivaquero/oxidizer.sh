@@ -1,6 +1,6 @@
 # Oxidizer.sh
 
-![build](https://img.shields.io/github/workflow/status/ivaquero/oxidizer.sh/CI.svg)
+[![CI](https://github.com/ivaquero/oxidizer.sh/actions/workflows/main.yml/badge.svg)](https://github.com/ivaquero/oxidizer.sh/actions/workflows/main.yml)
 ![code size](https://img.shields.io/github/languages/code-size/ivaquero/oxidizer.svg)
 ![repo size](https://img.shields.io/github/repo-size/ivaquero/oxidizer.svg)
 ![license](https://img.shields.io/github/license/ivaquero/oxidizer.sh)
