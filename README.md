@@ -1,9 +1,9 @@
 # Oxidizer.sh
 
 [![CI](https://github.com/ivaquero/oxidizer.sh/actions/workflows/main.yml/badge.svg)](https://github.com/ivaquero/oxidizer.sh/actions/workflows/main.yml)
+[![license](https://img.shields.io/github/license/ivaquero/oxidizer.sh)](https://github.com/ivaquero/oxidizer.sh/blob/master/LICENSE)
 ![code size](https://img.shields.io/github/languages/code-size/ivaquero/oxidizer.svg)
 ![repo size](https://img.shields.io/github/repo-size/ivaquero/oxidizer.svg)
-![license](https://img.shields.io/github/license/ivaquero/oxidizer.sh)
 
 Minimalistic & Extensible Dotfile Management Solution using Rust Toolchains (PRs and Forks are welcome !)
 
