@@ -115,7 +115,7 @@ Of course, you are allowed to write your own plugins, see [[10. Writing A Plugin
 |   1   |  Brew   |  ✅   |  ✅   |   ❌    |     ✅     |
 |   2   |  Scoop  |  ❌   |  ❌   |   ✅    |     ✅     |
 |   3   | Utility |  ✅   |  ✅   |   ✅    |     ✅     |
-|   4   | System  | ✅[¹] |  ✅   |   ✅    |     ✅     |
+|   4   | System  |  ✅¹  |  ✅   |   ✅    |     ✅     |
 |   5   |  Pueue  |  ✅   |  ✅   |   ✅    |     ✅     |
 |   6   |   Git   |  ✅   |  ✅   |   ✅    |            |
 |   7   |  Conan  |  ✅   |  ✅   |   ✅    |            |
@@ -137,7 +137,7 @@ Of course, you are allowed to write your own plugins, see [[10. Writing A Plugin
 🕒: basic functionality, needs more features
 ❌: not exist
 
-> [¹]: Currently, on Linux only provide with Ubuntu-specific shortcuts.
+> ¹: Currently, on Linux only provide with Ubuntu-specific shortcuts.
 
 Oxidizer uses Homebrew or Scoop to manage packages and softwares to bypass the requirement of administrator privilege.
 

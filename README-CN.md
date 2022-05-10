@@ -102,7 +102,7 @@ ef ox
 |  1   |  Brew   |  ✅   |  ✅   |   ❌    |   ✅   |
 |  2   |  Scoop  |  ❌   |  ❌   |   ✅    |   ✅   |
 |  3   | Utility |  ✅   |  ✅   |   ✅    |   ✅   |
-|  4   | System  | ✅[¹] |  ✅   |   ✅    |   ✅   |
+|  4   | System  |  ✅¹  |  ✅   |   ✅    |   ✅   |
 |  5   |  Pueue  |  ✅   |  ✅   |   ✅    |   ✅   |
 |  6   |   Git   |  ✅   |  ✅   |   ✅    |        |
 |  7   |  Conan  |  ✅   |  ✅   |   ✅    |        |
@@ -124,7 +124,7 @@ ef ox
 🕒：基础功能，有待补充
 ❌：不存在
 
-> [¹]：目前在 Linux 只提供 Ubuntu 的相关快捷操作
+> ¹：目前在 Linux 只提供 Ubuntu 的相关快捷操作
 
 Oxidizer 通过 Homebrew 或 Scoop 管理包和软件，以绕过管理员权限的要求。
 
