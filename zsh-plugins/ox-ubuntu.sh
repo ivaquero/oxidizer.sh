@@ -49,21 +49,21 @@ sysinfo() {
 # apt-get
 ##########################################################
 
-alias ubh="apt-get help"
-alias ubsc="apt-cache search"
-alias ubif="apt-cache show"
-alias ubdp="apt-cache depends"
-alias ubrdp="apt-cache rdepends"
-alias ubls="apt-get list --installed"
+alias ah="apt-get help"
+alias asc="apt-cache search"
+alias aif="apt-cache show"
+alias adp="apt-cache depends"
+alias ardp="apt-cache rdepends"
+alias als="apt-get list --installed"
 
-alias ubis="sudo apt-get install"
-alias ubus="sudo apt-get remove"
-alias ubusp="sudo apt-get remove --purge"
-alias ubups="sudo apt-get update"
-alias ubup="sudo apt-get upgrade"
-alias ubcl="sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean"
-alias ubclp="sudo apt-get autoremove --purge && sudo apt-get clean && sudo apt-get autoclean"
-alias ubck="sudo apt-get check"
+alias ais="sudo apt-get install"
+alias aus="sudo apt-get remove"
+alias ausp="sudo apt-get remove --purge"
+alias aups="sudo apt-get update"
+alias aup="sudo apt-get upgrade"
+alias acl="sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean"
+alias aclp="sudo apt-get autoremove --purge && sudo apt-get clean && sudo apt-get autoclean"
+alias ack="sudo apt-get check"
 
 ##########################################################
 # wsl
