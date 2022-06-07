@@ -306,7 +306,7 @@ bss pu
 conda install -c conda-forge mamba conda-tree
 ```
 
-除了上面[[6. 包管理]]提及的 Conda 命令，Conda 插件还提供了 Conda 环境管理的快捷命令，均以 `ce` 开头
+除了上面 `6. 包管理` 提及的 Conda 命令，Conda 插件还提供了 Conda 环境管理的快捷命令，均以 `ce` 开头
 
 - `ceat`：激活环境
   - 变量长度 = 0：激活 `环境`

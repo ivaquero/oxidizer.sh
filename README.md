@@ -108,7 +108,7 @@ Oxidizer is origenally designed for **non-administrator** users. It quickly sets
 
 Oxidizer is designed to be extensible, you can personalize `PLUGINS` in `custom.sh` to load the plugins by your need.
 
-Of course, you are allowed to write your own plugins, see [[10. Writing A Plugin]] for details.
+Of course, you are allowed to write your own plugins, see `10. Writing A Plugin` for details.
 
 | index | Plugin  | Linux | macOS | Windows | required ? |
 | :---: | :-----: | :---: | :---: | :-----: | :--------: |
@@ -163,7 +163,7 @@ For Linux users, you can try to add Homebrew tap [Hombrew-Linux](https://github.
 
 For example, if you want to edit `~/.zshrc`, you can type `ef zs`.
 
-When you use `epf zs`, `~/.zshrc` will be copied and save in `$BACKUP/shell` folder, where `$BACKUP` is the backup path that can be personalized in `$OXIDIZER/custom.sh`. As mentioned in [[1. Get Started]], you can open `custom.sh` simply by `ef ox`.
+When you use `epf zs`, `~/.zshrc` will be copied and save in `$BACKUP/shell` folder, where `$BACKUP` is the backup path that can be personalized in `$OXIDIZER/custom.sh`. As mentioned in `1. Get Started`, you can open `custom.sh` simply by `ef ox`.
 
 The table below shows the informatioin of specific configuration files.
 
@@ -335,7 +335,7 @@ Note that the conda plugin is based on `mamba` (a parallel version of conda) and
 conda install -c conda-forge mamba conda-tree
 ```
 
-Besides the shortcuts mentioned above in [[6. Package Management]], the conda plugin also provides with Conda environment management shortcuts which start with `ce`
+Besides the shortcuts mentioned above in `6. Package Management`, the conda plugin also provides with Conda environment management shortcuts which start with `ce`
 
 - `ceat`: activate environment
   - `$1` length = 0: activate `base` env
