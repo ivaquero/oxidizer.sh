@@ -27,6 +27,8 @@ git clone --depth=1 https://github.com/ivaquero/oxidizer.sh.git $OXIDIZER
 bash $OXIDIZER/install.sh
 ```
 
+- 对中国大陆用户，可设置 `BREW_CN` 变量来下载安装 Homebrew：
+
 ```bash
 export BREW_CN=1
 ```
@@ -40,8 +42,6 @@ $env:OXIDIZER = "$env:USERPROFILE\oxidizer"
 git clone --depth=1 https://github.com/ivaquero/oxidizer.sh.git $env:OXIDIZER
 . $env:OXIDIZER\install.ps1
 ```
-
-- 对中国大陆用户，可设置 `BREW_CN` 变量来下载安装 Homebrew：
 
 安装之后，您可以在`custom.sh`中个性化您的系统环境（请参考 `demo-custom.sh`），通过一下命令打开`custom.sh`
 
