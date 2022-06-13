@@ -95,7 +95,7 @@ Oxidizer is origenally designed for **non-administrator** users. It quickly sets
 - [ ] Use `Deno` instead of `Node`
 - [ ] Use `Nushell` instead of `Zsh` or `Powershell`
 
-> For `Nushell`: Its nu language is new and will add learning cost. Besides, nu scripts do not have any linter or formatter, which is not convinient for coding.
+> For `Nushell`: Its nu language is new and will add learning cost. If you'd love to try something new, see [oxidizer-next](https://github.com/ivaquero/oxidizer-next.sh.git).
 
 ### 3.3. Other Useful Rust Tools
 
