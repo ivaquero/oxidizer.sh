@@ -68,7 +68,7 @@ ef ox
 - [x] 使用 `bat` 替换 `cat`
 - [x] 使用 `fd` 替换 `find`
 - [x] 使用 `gitui` 替换 `lazygit`
-- [x] 使用 `ls --tree` 替换 `tree`
+- [x] 使用 `lsd --tree` 替换 `tree`
 - [x] 使用 `lsd` 替换 `ls`
 - [x] 使用 `ripgrep` 替换 `grep`
 - [x] 使用 `sd` 替换 `sed`
