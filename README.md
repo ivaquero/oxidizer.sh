@@ -77,6 +77,8 @@ Oxidizer is origenally designed for **non-administrator** users. It quickly sets
 - [x] Use `bat` instead of `cat`
 - [x] Use `fd` instead of `find`
 - [x] Use `gitui` instead of `lazygit`
+- [x] Use `lsd` instead of `ls`
+- [x] Use `ls --tree` instead of `tree`
 - [x] Use `ripgrep` instead of `grep`
 - [x] Use `sd` instead of `sed`
 - [x] Use `tealdeer` instead of `tldr` or `man`
