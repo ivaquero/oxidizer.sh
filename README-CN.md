@@ -86,7 +86,7 @@ ef ox
 - [ ] 使用 `Deno` 替换 `Node`
 - [ ] 使用 `Nushell` 替换 `Zsh` or `Powershell`
 
-> 对 `Nushell`：其 nu 语言比较新，会增加学习成本。另外， nu 脚本目前没有任何检查器和格式化器，编写并不方便。
+> 对 `Nushell`：其 nu 语言比较新，会增加学习成本。如果想尝鲜，可关注 [oxidizer-next](https://github.com/ivaquero/oxidizer-next.sh.git)。
 
 ### 3.3. 其他实用的 Rust 工具
 
