@@ -88,11 +88,11 @@ cup() {
 # $1=name
 cls() {
     if [[ -z $1 ]]; then
-        mamba list
+        conda list
     elif [[ ${#1} < 4 ]]; then
-        mamba list -n ${Conda_Env[$1]}
+        conda list -n ${Conda_Env[$1]}
     else
-        mamba list -n $1
+        conda list -n $1
     fi
 }
 
