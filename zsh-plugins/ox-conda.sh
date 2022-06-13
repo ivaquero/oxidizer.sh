@@ -55,9 +55,9 @@ back_conda() {
 
 alias ch="conda help"
 alias cif="conda info"
-alias cis="mamba install -q"
+alias cis="mamba install"
 alias cus="mamba uninstall -q"
-alias csc="mamba search -q"
+alias csc="mamba search"
 alias cdp="conda-tree depends"
 alias cdpt="conda-tree depends -t --small"
 # specific
