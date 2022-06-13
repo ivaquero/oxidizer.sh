@@ -88,10 +88,12 @@ Oxidizer is origenally designed for **non-administrator** users. It quickly sets
 
 ### 3.2. Software Replacement
 
-- [x] Use `Nushell` instead of `Zsh` or `Powershell`
-- [x] Use `Alacritty` instead of `iTerm2` or `Windows Terminal`
+- [ ] Use `Alacritty` instead of `iTerm2` or `Windows Terminal` (Not required, but strongly recommend)
 - [ ] Use `Helix` instead of `NeoVim`
 - [ ] Use `Deno` instead of `Node`
+- [ ] Use `Nushell` instead of `Zsh` or `Powershell`
+
+> For `Nushell`: Its nu language is new and will add learning cost. Besides, nu scripts do not have any linter or formatter, which is not convinient for coding.
 
 ### 3.3. Other Useful Rust Tools
 
