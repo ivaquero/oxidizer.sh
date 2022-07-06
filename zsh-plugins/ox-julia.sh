@@ -97,7 +97,7 @@ jlupn() {
 
 # calculate mature rate
 jlmt() {
-    local num_total=$(cat ${Element[jlm]} | rg "\[\[" | wc -l)
+    local num_total=$(cat ${Element[jlm]} | rg "version =" | wc -l)
     echo "total: $num_total"
     local num_immature=$(cat ${Element[jlm]} | rg '"0\.' | wc -l)
     local mature_rate=$((100 - num_immature * 100 / num_total))
