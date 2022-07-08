@@ -67,7 +67,7 @@ function gcl {
         s { git filter-repo --strip-blobs-bigger-than $args[2] }
         i { git filter-repo --strip-blobs-with-ids $args[2] }
         p { git filter-repo --invert-paths --path-glob $args[2] }
-        h {
+        a {
             git checkout --orphan new
             git add -A
             git commit -am "🎉 New Start"
@@ -94,7 +94,7 @@ function gjk {
     param ( $num )
     if ([string]::IsNullOrEmpty($num)) { $number = 10 }
     else { $number = $num }
-   
+
     git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | Where-Object { $_ -like "blob*" } | Sort-Object { [int]($_ -split "\s+")[2] } | Select-Object -Last $number
 }
 
@@ -111,15 +111,15 @@ function gtg() {
 function gpx {
     param ( $mode )
     Switch ( $mode ) {
-        { c | v } { 
-            git config --global http.proxy http://127.0.0.1:$global:Proxy.$mode 
-            git config --global https.proxy https://127.0.0.1:$global:Proxy.$mode 
+        { c | v } {
+            git config --global http.proxy http://127.0.0.1:$global:Proxy.$mode
+            git config --global https.proxy https://127.0.0.1:$global:Proxy.$mode
         }
-        s { 
+        s {
             git config --global http.proxy "socks5://127.0.0.1:$global:Proxy.$mode"
-            git config --global https.proxy "socks5://127.0.0.1:$global:Proxy.$mode" 
+            git config --global https.proxy "socks5://127.0.0.1:$global:Proxy.$mode"
         }
-        Default { 
+        Default {
             git config --global --unset http.proxy
             git config --global --unset https.proxy
         }

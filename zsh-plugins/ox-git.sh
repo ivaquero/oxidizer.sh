@@ -68,7 +68,7 @@ gcl() {
     -s) git filter-repo --strip-blobs-bigger-than $2 ;;
     -i) git filter-repo --strip-blobs-with-ids $2 ;;
     -p) git filter-repo --invert-paths --path-glob $2 ;;
-    -h)
+    -a)
         git checkout --orphan new
         git add -A
         git commit -am "🎉 New Start"
