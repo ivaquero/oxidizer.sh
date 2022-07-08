@@ -33,6 +33,7 @@ clean() {
     vs)
         echo "Cleaning up VSCode Cache.\n"
         rm -rfv $HOME/Library/'Application Support'/Code/Cache/*
+        rm -rfv $HOME/Library/'Application Support'/Code/'Service Worker'/*
         ;;
     cr)
         echo "Cleaning up Chrome Cache.\n"
@@ -40,9 +41,9 @@ clean() {
         ;;
     zs)
         echo "Cleaning up ZSH history.\n"
-        rm $HOME/.zsh_sessions/*.history*
-        rm $HOME/.zsh_sessions/*_timestamp
-        rm $HOME/.zsh_history
+        rm -rfv $HOME/.zsh_sessions/*.history*
+        rm -rfv $HOME/.zsh_sessions/*_timestamp
+        rm -rfv $HOME/.zsh_history
         ;;
     vol)
         echo "Emptying trash in Volumes.\n"
