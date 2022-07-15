@@ -376,7 +376,7 @@ cls h
 
 ## 7. Project & Task Management
 
-Oxidizer's task & system management follows the same phylosopy of package management, _i.e._ to provide unified interfaces to faciliate workflows.
+Oxidizer's task & system management follows the same phylosopy of package management, _{i}.e._ to provide unified interfaces to faciliate workflows.
 
 |       |   action    | git [g] | docker <br> container [dkc] | docker <br> image [dki] | lima [lm] | pueue [pu] | brew <br> services [bs] |
 | :---: | :---------: | :-----: | :-------------------------: | :---------------------: | :-------: | :--------: | :---------------------: |
