@@ -21,9 +21,10 @@ colorMoved = default
 
 [alias]
 count = rev-list --count HEAD
-undo = reset --soft HEAD^
 origin = remote add origin
 publish = push --set-upstream origin master
+rollback = reset --hard HEAD^
+undo = reset --soft HEAD^
 
 [http]
 version = HTTP/1.1
