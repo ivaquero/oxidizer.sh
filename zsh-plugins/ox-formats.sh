@@ -42,8 +42,7 @@ tomp3() {
     if [[ -z $2 ]]; then
         cbr=192K
     else
-        cbr=${2}K
+        cbr=$2K
     fi
-
     ffmpeg -i $1 -c:a libmp3lame -b:a $cbr ${1%%.*}.mp3
 }
