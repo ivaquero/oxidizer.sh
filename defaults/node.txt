@@ -1,1 +1,1 @@
-eslint tsc typescript   
+eslint tsc typescript

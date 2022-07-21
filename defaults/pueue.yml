@@ -6,7 +6,7 @@ client:
   show_expanded_aliases: false
   dark_mode: false
   max_status_lines: ~
-  status_time_format: "%H:%M:%S"
+  status_time_format: '%H:%M:%S'
   status_datetime_format: "%Y-%m-%d\n%H:%M:%S"
 daemon:
   pause_group_on_failure: false
@@ -19,7 +19,7 @@ shared:
   use_unix_socket: true
   unix_socket_path: ~
   host: 127.0.0.1
-  port: "6924"
+  port: '6924'
   daemon_cert: ~
   daemon_key: ~
   shared_secret_path: ~

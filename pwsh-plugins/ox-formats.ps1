@@ -19,17 +19,17 @@ function mdto {
     param ( $file, $format, $the_font)
     $name = (Get-Item $file).BaseName
     Switch ($format) {
-        -pdf { 
-            pandoc $file -o ($name + "." + $format) --pdf-engine=xelatex -V CJKmainfont=$the_font 
+        -pdf {
+            pandoc $file -o ($name + "." + $format) --pdf-engine=xelatex -V CJKmainfont=$the_font
         }
         -html {
-            pandoc $file -o ($name + "." + $format) --standalone --mathjax --shift-heading-level-by=-1 
+            pandoc $file -o ($name + "." + $format) --standalone --mathjax --shift-heading-level-by=-1
         }
         -docx {
-            pandoc $file -o ($name + "." + $format) 
+            pandoc $file -o ($name + "." + $format)
         }
         default {
-            pandoc $file -o ($name + "." + $format) 
+            pandoc $file -o ($name + "." + $format)
         }
     }
 }
@@ -43,6 +43,6 @@ function tomp3 {
     $name = (Get-Item $file).BaseName
     if ([string]::IsNullOrEmpty($cbr)) { $bitrate = "192K" }
     else { $cbr = $bitrate + "K" }
-    
+
     ffmpeg -i $file -c:a libmp3lame -b:a $cbr $name.mp3
 }
