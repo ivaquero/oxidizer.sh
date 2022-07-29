@@ -15,11 +15,6 @@ render_timer: false
 # Entries in shell.args are passed unmodified as arguments to the shell.
 shell:
   program: /bin/zsh
-  args:
-    - --login
-    # execute
-    - -c
-    - 'zellij attach --index 0 --create'
 
 window:
   # Specified in number of columns/lines, not pixels. If both are zero this
@@ -156,17 +151,18 @@ key_bindings:
   # split pane in h12
   - { key: LBracket, mods: Command|Alt, chars: "\x02\"" }
   - { key: LBracket, mods: Command|Alt, chars: "\x02%" }
-  - { key: LBracket, mods: Command|Alt, chars: "\x0ej\x0e" }
-  - { key: LBracket, mods: Command|Alt, chars: "\x0ej\x0e" }
+  - { key: LBracket, mods: Command|Alt, chars: "\x0ej\x0e\x0ej\x0e" }
   # split pane in v12
   - { key: RBracket, mods: Command|Alt, chars: "\x02%" }
   - { key: RBracket, mods: Command|Alt, chars: "\x02\"" }
-  - { key: RBracket, mods: Command|Alt, chars: "\x0el\x0e" }
+  - { key: RBracket, mods: Command|Alt, chars: "\x0el\x0e\x0el\x0e" }
   # split pane in 22
   - { key: Backslash, mods: Command|Alt, chars: "\x02%" }
   - { key: Backslash, mods: Command|Alt, chars: "\x02\"" }
   - { key: Backslash, mods: Command|Alt, chars: "\x1bh" }
   - { key: Backslash, mods: Command|Alt, chars: "\x02\"" }
+  - { key: Backslash, mods: Command|Alt, chars: "\x0ej\x0e\x0ej\x0e" }
+  - { key: Backslash, mods: Command|Alt, chars: "\x0el\x0e\x0el\x0e" }
   # increase / decrease pane size
   - { key: Minus, mods: Command|Alt, chars: "\x1b-" }
   - { key: Equals, mods: Command|Alt, chars: "\x1b=" }
