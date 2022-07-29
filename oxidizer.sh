@@ -171,10 +171,12 @@ if [[ $STARTUP ]]; then
     *zsh)
         eval "$(starship init zsh)"
         eval "$(zoxide init zsh)"
+        eval "$(zellij setup --generate-auto-start zsh)"
         ;;
     *bash)
         eval "$(starship init bash)"
         eval "$(zoxide init bash)"
+        eval "$(zellij setup --generate-auto-start bash)"
         ;;
     esac
     startup
