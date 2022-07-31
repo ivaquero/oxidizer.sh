@@ -9,6 +9,9 @@ if [[ $(uname -s) == "Darwin" ]]; then
     export texlive=/usr/local/texlive
 fi
 
+# bin
+eval "$(/usr/libexec/path_helper)"
+
 init_texlive() {
     echo "Initialize TeXLive using Oxidizer configuration"
     local num=$(cat ${Oxygen[bktl]} | wc -l | rg --only-matching "\d+")
