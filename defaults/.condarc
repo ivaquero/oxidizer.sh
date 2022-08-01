@@ -1,5 +1,6 @@
 channels:
   - conda-forge
+  - pytorch
 
 add_pip_as_python_dependency: true
 channel_priority: flexible
